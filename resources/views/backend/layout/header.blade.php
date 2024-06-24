@@ -15,21 +15,18 @@
                 </button>
                 <div class="dropdown-menu">
 
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        Application
-                    </a>
+                   
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        Software
+                    <a href="javascript:void(0);" class="dropdown-item notify-item" data-toggle="modal" data-target="#exampleModalScrollable">
+                        Add Request
                     </a>
+                   
 
-                    <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                         EMS System
                     </a>
-
+                    
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                         CRM App
@@ -99,7 +96,7 @@
                 </div>
             </div>
 
-            <div class="dropdown d-inline-block">
+            {{-- <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item noti-icon waves-effect"
                     id="page-header-notifications-dropdown" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">
@@ -166,7 +163,7 @@
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="dropdown d-inline-block ml-2">
                 <button type="button" class="btn header-item waves-effect"
@@ -199,6 +196,46 @@
 
         </div>
     </div>
-</header>{{('')}}
+</header>
 
 
+
+
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
+                                <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                               
+                                <form method="POST" action={{route('addRequest')}}  enctype="multipart/form-data">
+                                    @csrf
+                                    
+                                    <div class="form-group">
+                                        <label for="p_tracking">Name</label>
+                                        <input type="text" id="name" name="name" class="form-control" placeholder="Enter your text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="items">Request Item</label>
+                                        <input type="text" id="request_item" name="request_item" class="form-control" placeholder="Enter your text">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary waves-effect waves-light" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary waves-effect waves-light">Save changes</button>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+           
+</div>
